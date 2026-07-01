@@ -50,9 +50,11 @@ The plugin jar is at `build/libs/your-plugin.jar`.
 
 Copy the jar to the sideloaded plugins directory:
 
+```batch
+copy "build\libs\your-plugin.jar" "%USERPROFILE%\.runelite\sideloaded-plugins\"
 ```
-copy build\libs\your-plugin.jar %USERPROFILE%\.runelite\sideloaded-plugins\
-```
+
+For example: `C:\Users\Roberto I\.runelite\sideloaded-plugins\`
 
 ### 5. Launch
 
