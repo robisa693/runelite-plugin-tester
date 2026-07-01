@@ -57,6 +57,10 @@ java -jar DevLauncher.jar
 
 The RuneLite client starts with developer mode enabled, and your plugin loads automatically.
 
+## Jagex Accounts
+
+If you use a Jagex account, see [Using Jagex Accounts](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts) for the required setup.
+
 ## Updating DevLauncher
 
 Rebuild after updating `RuneLite.jar`:
