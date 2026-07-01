@@ -6,6 +6,8 @@ Lets you start the official RuneLite client with custom start arguments (`--deve
 
 The Jagex Launcher wraps RuneLite and doesn't expose command-line arguments. Normally you'd need to clone the RuneLite repo and run it from an IDE to pass flags like `--developer-mode`. `DevLauncher` loads the official client jars from `~/.runelite/repository2/` and starts the client with whatever arguments you want — no IDE required.
 
+> Only tested on Windows.
+
 ## Prerequisites
 
 - JDK 11+ ([Adoptium](https://adoptium.net/))
