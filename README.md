@@ -39,12 +39,29 @@ This creates `DevLauncher.jar` in the current directory.
 
 ### 3. Build your plugin
 
+A RuneLite plugin is a standard Java project built with Gradle. The source lives under `src/main/java/` in a package like `com.yourname.youplugin/`.
+
+Your `build.gradle` needs the RuneLite client dependency:
+
+```groovy
+repositories {
+    maven { url = 'https://repo.runelite.net' }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'net.runelite:client:latest.release'
+}
+```
+
+To build:
+
 ```bash
 cd your-plugin
 ./gradlew build
 ```
 
-The plugin jar is at `build/libs/your-plugin.jar`.
+The output jar is at `build/libs/your-plugin-*.jar` (the exact name depends on your `build.gradle` settings). This jar contains your compiled plugin and can be sideloaded.
 
 ### 4. Install the plugin
 
