@@ -12,6 +12,10 @@ The Jagex Launcher wraps RuneLite and doesn't expose command-line arguments. Nor
 
 - JDK 11+ ([Adoptium](https://adoptium.net/))
 
+## Jagex Accounts
+
+If you use a Jagex account, see [Using Jagex Accounts](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts) for the required setup.
+
 ## Setup
 
 ### 1. Populate the repository
@@ -57,10 +61,6 @@ java -jar DevLauncher.jar
 ```
 
 The RuneLite client starts with developer mode enabled, and your plugin loads automatically.
-
-## Jagex Accounts
-
-If you use a Jagex account, see [Using Jagex Accounts](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts) for the required setup.
 
 ## Updating DevLauncher
 
