@@ -46,8 +46,8 @@ public class DevLauncher
 
         Thread.currentThread().setContextClassLoader(loader);
 
-        Class<?> launcherClass = loader.loadClass("net.runelite.launcher.Launcher");
-        Method mainMethod = launcherClass.getMethod("main", String[].class);
+        Class<?> clientClass = loader.loadClass("net.runelite.client.RuneLite");
+        Method mainMethod = clientClass.getMethod("main", String[].class);
         mainMethod.invoke(null, new Object[]{new String[]{"--developer-mode"}});
     }
 }
