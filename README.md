@@ -9,13 +9,12 @@ The Jagex Launcher wraps RuneLite and doesn't expose command-line arguments. Nor
 ## Prerequisites
 
 - JDK 11+ ([Adoptium](https://adoptium.net/))
-- `RuneLite.jar` from [runelite.net](https://runelite.net) — place it in this directory
 
 ## Setup
 
 ### 1. Populate the repository
 
-Run `RuneLite.jar` at least once. This downloads the client jars to `~/.runelite/repository2/` and creates the `sideloaded-plugins` directory.
+Run RuneLite at least once (however you normally launch it — standalone launcher or Jagex Launcher). This downloads the client jars to `~/.runelite/repository2/` and creates the `sideloaded-plugins` directory.
 
 ### 2. Compile DevLauncher
 
@@ -63,7 +62,7 @@ If you use a Jagex account, see [Using Jagex Accounts](https://github.com/runeli
 
 ## Updating DevLauncher
 
-Rebuild after updating `RuneLite.jar`:
+Rebuild after modifying `DevLauncher.java`:
 
 ```
 compile.bat
