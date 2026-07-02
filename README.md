@@ -1,5 +1,4 @@
 # RuneLite Plugin Tester
-This was removed from plugin-hub for break the jagex third party guidelines!
 
 Lets you start the official RuneLite client with custom start arguments (`--developer-mode`, etc.) without having to compile RuneLite from source in an IDE.
 
