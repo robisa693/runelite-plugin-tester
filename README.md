@@ -22,64 +22,57 @@ If you use a Jagex account, see [Using Jagex Accounts](https://github.com/runeli
 
 Run RuneLite at least once (however you normally launch it — standalone launcher or Jagex Launcher). This downloads the client jars to `~/.runelite/repository2/` and creates the `sideloaded-plugins` directory.
 
-### 2. Compile DevLauncher
+### 2. One-command start (build + install + launch)
+
+If you have a plugin repo checked out locally, this does everything in one step:
 
 **Windows:**
 ```
-compile.bat
+start.bat C:\path\to\your-plugin
 ```
 
 **Linux / Mac:**
 ```
-chmod +x compile.sh
-./compile.sh
+./start.sh /path/to/your-plugin
 ```
 
-This creates `DevLauncher.jar` in the current directory.
+This compiles DevLauncher, runs `./gradlew build` in the plugin repo, copies the latest jar to `~/.runelite/sideloaded-plugins/` (removing stale versions), and launches RuneLite with `--developer-mode`.
 
-### 3. Build your plugin
-
-A RuneLite plugin is a standard Java project built with Gradle. The source lives under `src/main/java/` in a package like `com.yourname.youplugin/`.
-
-Your `build.gradle` needs the RuneLite client dependency:
-
-```groovy
-repositories {
-    maven { url = 'https://repo.runelite.net' }
-    mavenCentral()
-}
-
-dependencies {
-    compileOnly 'net.runelite:client:latest.release'
-}
+Run without arguments to skip the plugin build and just launch RuneLite:
+```
+start.bat
+./start.sh
 ```
 
-To build:
+### 3. Manual steps (optional)
 
+If you prefer to do each step separately:
+
+**Compile DevLauncher:**
+```
+compile.bat
+```
+```
+chmod +x compile.sh && ./compile.sh
+```
+
+**Build your plugin** (standard Gradle Java project):
 ```bash
 cd your-plugin
 ./gradlew build
 ```
 
-The output jar is at `build/libs/your-plugin-*.jar` (the exact name depends on your `build.gradle` settings). This jar contains your compiled plugin and can be sideloaded.
+The jar is at `build/libs/your-plugin-*.jar`.
 
-### 4. Install the plugin
-
-Copy the jar to the sideloaded plugins directory:
-
+**Install:**
 ```batch
 copy "build\libs\your-plugin.jar" "%USERPROFILE%\.runelite\sideloaded-plugins\"
 ```
 
-For example: `C:\Users\Roberto I\.runelite\sideloaded-plugins\`
-
-### 5. Launch
-
+**Launch:**
 ```
 java -jar DevLauncher.jar
 ```
-
-The RuneLite client starts with developer mode enabled, and your plugin loads automatically.
 
 ## Updating DevLauncher
 
@@ -88,3 +81,8 @@ Rebuild after modifying `DevLauncher.java`:
 ```
 compile.bat
 ```
+```
+./compile.sh
+```
+
+Or use the start scripts which always recompile DevLauncher on each run.
